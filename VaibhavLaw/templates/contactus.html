@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%} 
+<hr>
+<section class=" col-md-12 offset-1" id="contact-form">
+  <div class="row">
+        <div class=" col-md-7">
+              <h1 class="heading text-center">Contact Us !!</h1>
+          
+              <form class="mt-5 form-control" action="" method="post">
+                    {% csrf_token %}
+                    {% for message in messages %}
+         <div
+              class="alert alert-{{message.tags}} alert-dismissible fade show"
+              role="alert"
+            >
+             <strong>{{message}}</strong> 
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+         {% endfor %}
+                 {% for fm in form %}
+                 {{fm.label}} : <br> {{fm}}{{fm.error}}<br>
+                 {% endfor %}
+               
+               
+              <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+        </div>
+
+        <div class="row col-md-4 mt-5 offset-1">
+          <div class="lft-pd">
+            <div class="p-heading"><h2 >Our Offices</h2></div>
+            <div class="address mt-2">
+          <p>
+            <span><h3>Indore Office</h3><br>
+              144, rampurawala building 
+             <br>
+             Opposite district court <br>
+             near gandhi hall <br>
+             Indore (M.P) 452011</span></p>
+          <p>
+            <span>+91 9977721166</span></p>
+          <!-- <p>
+            <span>+91 5555555555</span></p> -->
+          <p>
+            <span>dashrathghodke@gmail.com</span></p>
+        </div>
+       
+              
+        </div>
+                </div>
+              </div>
+  </section>
+  <section id="address">
+    
+  </section>
+
+
+<!-- <section class="col-md-12"  id="contact-details">
+      
+<div class="container ">
+<div class="row ">
+
+
+
+      <div class="row mt-5">
+      <div class="card mb-5 mt-5 body-center offset-1" style="width: 18rem;" id="card-123">
+            <img src="{% static 'images/call.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Contact Numbers</h5>
+              <p class="card-text">
+                  +91 1234567890<br>
+                  +91 1234567890<br>
+                  
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
+          <div class="card offset-1 mb-5 mt-5" style="width: 18rem;" id="card-123">
+            <img src="{% static 'images/location-pin.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Office Address</h5>
+              <p class="card-text">Block 2. District court. In front of court room 2</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a> 
+            </div>
+          </div>
+          
+          <div class="card  offset-1 mb-5 mt-5" style="width: 18rem;" id="card-123">
+            <img src="{% static 'images/mail.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">E-Mail</h5>
+              <p class="card-text">vaibhavappu123@gmail.com</p>
+               <a href="#" class="btn btn-primary">Go somewhere</a> 
+            </div>
+          </div>
+          <div class="mt-5 mb-5">
+            <h1 class="text-center text-light"> * Contact Us Anytime * </h1> 
+       </div >
+      </div>
+</div>
+</div>
+
+</section> -->
+<section class="mt-5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.1996561629253!2d75.86227265049105!3d22.7208192850337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd0d837fa02b%3A0x3b067793165377a9!2sDistrict%20Court%20Indore!5e0!3m2!1sen!2sin!4v1670139265828!5m2!1sen!2sin" width="100%" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+
+{% endblock content%}

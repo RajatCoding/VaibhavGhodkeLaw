@@ -1,0 +1,55 @@
+#check{
+color: red;
+}
+#carouselExampleFade {
+      height: 500px;
+      width: auto;
+      overflow: hidden;
+    }
+
+#caption-carosoule{
+      float: left;
+    }
+
+#heading-welcome{
+    color:brown;
+  }
+
+ #heading-Testimonials{
+    color:brown;
+  }
+
+#temp{
+    color:brown;
+  }
+
+.about-us-para{
+  font-size: 24px;
+}
+
+.heading{
+  color: brown;
+  
+}
+.navbar-expand-lg{
+
+  background-color: white;
+}
+
+#contact-details{
+
+  background-color: brown;
+
+}
+#contact-form{
+  margin-top: 120px;
+}
+
+.nav-item {
+
+font-size: 22px;
+}
+
+.heading-office{
+  font-size: 28px;
+}

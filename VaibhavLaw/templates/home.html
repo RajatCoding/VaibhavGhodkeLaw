@@ -1,0 +1,80 @@
+ {% extends 'base.html' %} 
+ {% load static %}
+ {% block title %} alfa{% endblock title%}
+
+ {% block carosoule%}
+ <section id="carasoule">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/banner1.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block" id="caption-carosoule">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/banner2.jpg'%}"class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <!-- <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div> -->
+      </div>
+    </div>
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden ">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </section>
+
+  <section class="content-hld pt-3 pt-lg-5  mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1s; animation-delay: 0s; animation-name: fadeIn;">
+                <h1 id="heading-welcome" class="">Welcome to Ghodke Law Associates</h1>
+                <p>Starting from scratch with a family tradition of about 55 yrs we have crystallized into associates inheriting the legacy of eminent jurist, lawyers, judges and professionals, which is now being reckoned as I.B. Law Associates.</p>
+                <p>I.B. Law Associates is having its corporate headquarters at Bangalore, State of Karnataka, India.</p>
+                <p>The firm consists of a team of seasoned and experienced lawyers, consultants and professionals having exposure and expertise in the core areas of law &amp; business.</p>
+                <p>The work culture is transparent, efficient &amp; schedule oriented with intelligent and dedicated professionals. The firm is equipped with optimum infrastructure with latest state of the art technology for research oriented quality product and services. </p>
+                <p>The firm is also having exposure in foreign collaboration initiatives,international tie-ups and international licensure and certifications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials " class="content-hld pt-3 pt-lg-5  offset-1" >
+  <div class="col-md-6 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s" style="visibility: visible; animation-duration: 1s; animation-delay: 1s; animation-name: fadeIn;">
+    <h2 id="heading-Testimonials" onclick="alfa()">Testimonials</h2>
+    <article class="testimonial">
+        <div class="tl_content_wrap">
+            <div class="tl_content">
+                <blockquote>Thanks so much for super fast resolution. Really appriciate the hard work and effort done by team!</blockquote>
+            </div>
+        </div>
+        <div class="author_wrap">
+            <figure class="tl_author_img">
+                <img width="45" height="45" src="{% static 'images/lawyer.jpg' %}">
+            </figure><a target="_blank" href="#" class="tl_author"></a>
+            <p class="tl_company">Client</p>
+        </div>
+    </article>
+</div>
+</section>
+{% endblock carosoule%}
