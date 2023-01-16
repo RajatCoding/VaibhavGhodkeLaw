@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
-from . forms import Contact_US_form
+from . forms import Contact_US_form,Carrier_form
 from django.contrib import messages
-from . task import send_gmail
+# from . task import send_gmail
 from celery import shared_task
 from django.core.mail import send_mail
+from django.views.generic import CreateView
 # Create your views here.
 import time
 
@@ -34,7 +35,7 @@ def contact_us(request):
                               {"Name" : name,"Email" : email,"Mobile Number" :  mobile_no, "Message" : message}
                               )
                         
-                        send_gmail.delay(data)
+                        # send_gmail.delay(data)
                         messages.success(request, "Your message is recived. Thanks for contacting us, We will rich out to you shortly")
                         return redirect("contact_us")
             else:
@@ -45,7 +46,27 @@ def contact_us(request):
                   return render(request,"contactus.html", {"form":form})
 
 def carrers(request):
-      return render(request,"carrers.html")
+      if request.method == "POST":
+            form = Carrier_form(request.POST,request.FILES)
+
+            print(form.data)
+            if form.is_valid():
+                        print(form.data)
+                        form.save()
+                        
+            
+                        messages.success(request, "Your message is recived. Thanks for contacting us, We will rich out to you shortly")
+                        return redirect("carrers")
+
+            else:
+                  print(form.errors)
+
+                  return render(request,"carrers.html",{"errors":form.errors, "form":form})
+                  
+      else:
+                  form = Carrier_form()
+                  return render(request,"carrers.html", {"form":form})
+
 
 def practice_area(request):
       return render(request,"practice_area.html")

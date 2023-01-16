@@ -13,7 +13,16 @@ class ContactUs(models.Model):
       email = models.EmailField(max_length=100)
       mobile_no = models.CharField(max_length=10, validators=[mobile_validate])
       message = models.TextField()
-    
+
+class Carriers(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=100, blank=True)
+    mobile_no = models.CharField(max_length=10, validators=[mobile_validate], blank=False, unique=True)
+    resume = models.FileField(upload_to='resume',blank=False)
+
+
+
 class Client_testonomial(models.Model):
     client_name = models.CharField(max_length=30)
     client_message = models.CharField(max_length=500)
